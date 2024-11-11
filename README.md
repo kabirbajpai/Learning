@@ -1,2 +1,2 @@
 # Learning
-started exploring git and github
+started exploring git and github..
