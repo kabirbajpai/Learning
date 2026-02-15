@@ -1,17 +1,17 @@
 {
-  "engines":{
-    "node":"22.16.0"
-  },
   "name": "airbnbproject",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "connect-flash": "^0.1.1",
     "connect-mongo": "^6.0.0",
