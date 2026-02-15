@@ -1,0 +1,44 @@
+<% layout("layouts/boilerplate")%>
+
+<body>
+    <h1>Edit listing</h1>
+    <form method="post" action="/listings/<%=user._id%>?_method=PUT" novalidate class="needs-validation">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input type="text" name="title" value="<%=user.title%>" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <textarea name="description" type="text" class="form-control" required><%=user.description%></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">image link</label>
+            <input type="text" name="image[url]" value="<%=user.image.url%>" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">price</label>
+            <input type="number" name="price" value="<%=user.price%>" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="country" class="form-label">country</label>
+            <input type="text" name="country" value="<%=user.country%>" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">location</label>
+            <input type="text" name="location" value="<%=user.location%>" class="form-control" required>
+        </div>
+
+        <br>
+        <button class="btn btn-dark add-btn">edit</button>
+        <br></br>
+
+    </form>
+    <script src="/css/script.js"></script>
+</body>
+
