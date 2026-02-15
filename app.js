@@ -292,17 +292,20 @@ app.post("/listings",isLoggedIn, async (req, res, next) => {
         if (!req.body.country) {
             throw new expressError(400, "field country is required");
         }
+        console.log( "this is your image url",req.body.image);
 
         let title = req.body.title;
         let description = req.body.description;
-        let image = req.body.image.url;
+        let image = req.body.image;
         let price = req.body.price;
         let location = req.body.location;
         let country = req.body.country;
         let newlisting = new listing({
             title: title,
             description: description,
-            image: image,
+            image: {
+                url:image
+            },
             price: price,
             location: location,
             country: country,
@@ -315,7 +318,7 @@ app.post("/listings",isLoggedIn, async (req, res, next) => {
         }
 
         req.session.added += 1;
-        console.log(req.body);
+        
         req.flash("success", `${req.session.added} listing${req.session.added > 1 ? "s" : ""} added successfully!`);
         res.redirect("/listings");
 
@@ -577,5 +580,7 @@ app.use((err, req, res, next) => {
 // for(let field of requiresFields){
 // if(!req.body[field]){
 // return next(new expressError(400,"please enter the required fields"))}};
+
+// https://airbnbproject-mern-stack-g97r.onrender.com/listings
 
 
